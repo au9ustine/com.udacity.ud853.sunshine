@@ -16,6 +16,7 @@
 
 package com.example.android.sunshine.app.data;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
@@ -26,6 +27,13 @@ import android.provider.BaseColumns;
 public class WeatherContract {
     /* Inner class that defines the table contents of the location table */
     public static final class LocationEntry implements BaseColumns {
+
+        // Build a Content Provider
+        public static final String CONTENT_AUTHORITY = "com.example.android.sunshine.app";
+        public static final Uri Base_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+        public static final String PATH_WEATHER = "weather";
+        public static final String PATH_LOCATION = "location";
+        public static final String DATE_FORMAT = "yyyyMMdd";
 
         // Table name
         public static final String TABLE_NAME = "location";
