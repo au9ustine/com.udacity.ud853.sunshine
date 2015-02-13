@@ -29,11 +29,11 @@ import com.example.android.sunshine.app.data.WeatherContract.WeatherEntry;
  * Created by shaotch on 2/10/2015.
  */
 public class WeatherDbHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "weatheer.db";
-    private static final int DATABSE_VERSION = 1;
+    public static final String DATABASE_NAME = "weather.db";
+    private static final int DATABASE_VERSION = 1;
 
     public WeatherDbHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABSE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
