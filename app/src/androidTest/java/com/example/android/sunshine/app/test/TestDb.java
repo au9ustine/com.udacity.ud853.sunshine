@@ -54,7 +54,7 @@ public class TestDb extends AndroidTestCase {
         WeatherDbHelper dbHelper = new WeatherDbHelper(mContext);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        ContentValues testValues = createNorthPoleLocationValues();
+        ContentValues testValues = createShanghaiLocationValues();
 
         long locationRowId;
         locationRowId = db.insert(LocationEntry.TABLE_NAME, null, testValues);
@@ -105,27 +105,16 @@ public class TestDb extends AndroidTestCase {
         ContentValues weatherValues = new ContentValues();
         weatherValues.put(WeatherEntry.COLUMN_LOC_KEY, locationRowId);
         weatherValues.put(WeatherEntry.COLUMN_DATETEXT, TEST_DATE);
-        weatherValues.put(WeatherEntry.COLUMN_DEGREES, 1.1);
-        weatherValues.put(WeatherEntry.COLUMN_HUMIDITY, 1.2);
-        weatherValues.put(WeatherEntry.COLUMN_PRESSURE, 1.3);
-        weatherValues.put(WeatherEntry.COLUMN_MAX_TEMP, 75);
-        weatherValues.put(WeatherEntry.COLUMN_MIN_TEMP, 65);
-        weatherValues.put(WeatherEntry.COLUMN_SHORT_DESC, "Asteroids");
-        weatherValues.put(WeatherEntry.COLUMN_WIND_SPEED, 5.5);
-        weatherValues.put(WeatherEntry.COLUMN_WEATHER_ID, 321);
+        weatherValues.put(WeatherEntry.COLUMN_DEGREES, 176.5);
+        weatherValues.put(WeatherEntry.COLUMN_HUMIDITY, 61.1);
+        weatherValues.put(WeatherEntry.COLUMN_PRESSURE, 1030.84);
+        weatherValues.put(WeatherEntry.COLUMN_MAX_TEMP, 15.045);
+        weatherValues.put(WeatherEntry.COLUMN_MIN_TEMP, 15.045);
+        weatherValues.put(WeatherEntry.COLUMN_SHORT_DESC, "Clouds");
+        weatherValues.put(WeatherEntry.COLUMN_WIND_SPEED, 6.57);
+        weatherValues.put(WeatherEntry.COLUMN_WEATHER_ID, 804);
 
         return weatherValues;
-    }
-
-    static ContentValues createNorthPoleLocationValues() {
-        // Create a new map of values, where column names are the keys
-        ContentValues testValues = new ContentValues();
-        testValues.put(LocationEntry.COLUMN_LOCATION_SETTING, TEST_LOCATION);
-        testValues.put(LocationEntry.COLUMN_CITY_NAME, "North Pole");
-        testValues.put(LocationEntry.COLUMN_COORD_LAT, 64.7488);
-        testValues.put(LocationEntry.COLUMN_COORD_LONG, -147.353);
-
-        return testValues;
     }
 
     static ContentValues createShanghaiLocationValues() {
@@ -133,8 +122,8 @@ public class TestDb extends AndroidTestCase {
         ContentValues testValues = new ContentValues();
         testValues.put(LocationEntry.COLUMN_LOCATION_SETTING, TEST_LOCATION);
         testValues.put(LocationEntry.COLUMN_CITY_NAME, "Shanghai");
-        testValues.put(LocationEntry.COLUMN_COORD_LAT, 31.23);
-        testValues.put(LocationEntry.COLUMN_COORD_LONG, 121.47);
+        testValues.put(LocationEntry.COLUMN_COORD_LAT, 31.22);
+        testValues.put(LocationEntry.COLUMN_COORD_LONG, 121.46);
 
         return testValues;
     }
